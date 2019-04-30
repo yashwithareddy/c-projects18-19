@@ -1,0 +1,198 @@
+/*
+PROJECT NAME: SNAKE AND LADDER
+BATCH MEMBERS:  B.YASHWITHA
+                CH.NIKITHA
+                C.SARAYU
+                URMILA
+BATCH no:8
+ROLL NO:
+ 18121A1210
+ 18121A1211
+ 18121A1216
+ 18121A1242
+
+BRANCH :IT/A
+
+
+AIM: TO WRITE A C++ PROGRAM TO PLAY SNAKE AND LADDER GAME USING A CLASS AND CONSTRUCTOR..
+THE DICE IS GENERATED RANDOMLY..THE PLAYER WITH SCORE 100 IS THE WINNER.
+
+
+
+*/
+
+
+#include<iostream>
+#include<ctime>
+#include <cstdlib>
+#define MAX_NUM 6
+using namespace std;
+
+int randomfunc(int &score);
+class game
+{
+public:
+    game()
+    {
+        cout<<endl;
+        cout<<endl;
+        cout<<"========================================"<<endl;
+        cout<<endl;
+        cout<<"SNAKE AND LADDER GAME \t\t\t\t"<<endl;
+        cout<<endl;
+        cout<<"========================================"<<endl;
+        cout<<endl;
+        cout<<"========================================"<<endl;
+        
+    }
+};
+int main()
+{
+    int p1_score=0,p2_score=0;
+    game x;
+    int i;
+    string player1,player2;
+    srand(time(0));
+    cout<<"ENTER THE NAME OF FIRST PLAYER :"<<endl;
+    cin>>player1;
+    cout<<"ENTER THE NAME OF PLAYER 2:"<<endl;
+    cin>>player2;
+    cout<<"THE POSITION OF PLAYER 1 AND PLAYER 2 IS 0 INITIALLY.."<<endl;
+    cin.get();
+    while(p1_score<100 && p2_score<100)
+    {
+        
+        cout<<player1<<" It is your turn press any key to play:\n "<<endl;
+        cin.get();
+        randomfunc(p1_score);
+        cout<<"Your score is "<<p1_score<<endl;
+        if(p1_score==100)
+            break;
+        cout<<player2<<" It is your turn press any key to play\n"<<endl;
+        cin.get();
+        randomfunc(p2_score);
+        cout<<"Your score is :"<<p2_score<<endl;
+        if(p2_score==100)
+            break;
+        
+    }
+    if(p1_score>p2_score)
+    {
+        cout<<player1<<"is the winner"<<endl;
+    }
+    if(p2_score>p1_score)
+    {
+        cout<<player2<<"is the winner"<<endl;
+    }
+    if(p1_score==p2_score)
+    {
+        cout<<"Match is draw"<<endl;
+    }
+}
+int randomfunc(int &score)
+{
+    int random;
+    random=rand()%MAX_NUM;
+    cout<<"Your number is "<<random<<endl;
+    if((score+random)<=100){
+    score=random+score;
+    switch(score)
+    {
+        case 98 :score=28;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 95 :score=24;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 92 :score=51;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 83 :score=19;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 73 :score=1;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 69 :score=33;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 64 :score=36;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 59 :score=17;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 55 :score=7;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 52 :score=11;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 48 :score=9;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 46 :score=5;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 44 :score=22;
+            cout<<"you ran into a snake!"<<endl;
+            
+            break;
+        case 8 :score=26;
+            cout<<"luckyyy champ u got ladder"<<endl;
+            
+            break;
+        case 21 :score=82;
+            cout<<"luckyyy champ u got ladder"<<endl;
+            
+            break;
+        case 43 :score=77;
+            cout<<"luckyyy champ u got ladder"<<endl;
+            
+            break;
+        case 50 :score=91;
+            cout<<"luckyyy champ u got ladder"<<endl;
+            
+            break;
+        case 54 :score=93;
+            cout<<"luckyyy champ u got ladder"<<endl;
+            
+            break;
+        case 62 :score=96;
+            cout<<"luckyyy champ u got ladder"<<endl;
+            
+            break;
+        case 66 :score=87;
+            cout<<"luckyyy champ  u got ladder"<<endl;
+            
+            break;
+        case 80 :score=100;
+            cout<<"luckyyy champ u got ladder"<<endl;
+            
+    }
+    }
+    return score;
+}
+/*
+EXPECTED OUTPUT:
+ENTER PLAYER1 NAME: YASH
+ENTER PLAYER2 NAME: PREETHI
+
+THE SCORE OF PLAYER 1 AND 2 IS 0 INITIALLY..
+
+YASH YOUR TURN :ENTER
+PREETHI YOUR TURN :ENTER
+*/
+//<stop>
